@@ -6,7 +6,7 @@ const tokenSchema: Schema = new Schema<IToken>(
   {
     documentStatus: { type: Boolean, required: true, default: true },
     token: { type: String, required: true, index: true },
-    user: { type: Schema.Types.ObjectId, required: true, ref: 'cln_users' },
+    user: { type: Schema.Types.ObjectId, required: true, ref: 'USERS' },
     type: { type: String, enum: [config.tokenTypes.REFRESH], required: true },
     expires: { type: Date, required: true },
     blacklisted: { type: Boolean, default: false },
